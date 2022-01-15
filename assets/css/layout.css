@@ -1,4 +1,4 @@
-body{
-    text-align: center;
-   background-color: rosybrown;
-}
+body {
+  margin: 0; }
+  body #layout-main {
+    height: 100%; }

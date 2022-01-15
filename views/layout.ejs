@@ -6,12 +6,20 @@
         </title>
         
         <link rel="stylesheet" href="/css/layout.css">
-        <%-style%>
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
     </head>
     <body>
+        <div id="header">
         <%- include('_header'); %>
+        </div>
+        <main id="layout-main">
        <%- body%>
+       </main>
+       <div id ="footer">
         <%- include('_footer'); %>
+        
+        </div>
         <%-script%>
     </body>
 </html>
