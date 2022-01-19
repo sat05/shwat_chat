@@ -3,9 +3,29 @@
     height:20%;
     font-size: 1.3rem;
     color: lightyellow;
+    display: flex;
    // padding-top: 100%;
    #cod{
        padding-top:4%;
        padding-left: 2%;
+       display: inline-block;
+   }
+   #home{
+       display: inline-block;
+       text-decoration: none;
+      font-weight: bolder;
+      font-size: 1.2rem;
+   }
+   #profile{
+    display: inline-block;
+    text-decoration: none;
+   font-weight: bolder;
+   font-size: 1.2rem;
+   }
+   #user-name{
+    display: inline-block;
+    text-decoration: none;
+   font-weight: bolder;
+   font-size: 1.2rem;
    }
 }

@@ -2,7 +2,24 @@
   background-color: #8a5151;
   height: 20%;
   font-size: 1.3rem;
-  color: lightyellow; }
+  color: lightyellow;
+  display: flex; }
   #footer #cod {
     padding-top: 4%;
-    padding-left: 2%; }
+    padding-left: 2%;
+    display: inline-block; }
+  #footer #home {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.2rem; }
+  #footer #profile {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.2rem; }
+  #footer #user-name {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.2rem; }
