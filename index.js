@@ -12,7 +12,10 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')
 const sassMiddleware = require('node-sass-middleware');
-
+//flash messages are stored in session-cookies and are cleared on the next request
+//whenever we sign-in for the first time that flash msg is sent as locals in the session cookie and then erased after that. 
+const flash=require('connect-flash');
+const customware=require('./config/middleware');
 app.use(sassMiddleware({
 src: './assets/scss',
 dest: './assets/css',
@@ -24,6 +27,8 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(express.static('./assets'));
+//make the uploads path available to the browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
 //use layouts
 app.use(expressLayouts);
 
@@ -68,6 +73,8 @@ app.use(session(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+app.use(flash());
+app.use(customware.setFlash);
 // use express router
 app.use('/',require('./routes/index'));
 app.listen(port,function(err){

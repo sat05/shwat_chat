@@ -4,6 +4,19 @@
         </title>
     <link rel="stylesheet" href="/css/user.css">
    
-        <h1>Codeial/ <%= title %></h1>
-        <p> <%=user.username%> </p>
-        <p> <%=user.email%> </p>
+        <img src="<%= user.avatar %>" alt="<%=user.name %>" width="100">
+
+
+      <%  if(user.id == profile_user.id) {%>
+        <!--if user matches then show the form-->
+        <form action="/user/update/<%=profile_user.id%>"enctype="multipart/form-data"method="post">
+            <input type="text" name="username" placeholder="Your Name" value="<%=profile_user.username%>" required>
+            <input type="email" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required>
+            <input type="file" name="avatar" placeholder="profile-picture">
+            <input type="submit" value="update">
+        </form>
+        <%}else{%>
+            <!--else show only the profile info-->
+            <p> <%=profile_user.username%> </p>
+            <p> <%=profile_user.email%> </p>
+        <%}%>
