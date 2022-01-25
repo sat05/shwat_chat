@@ -31,7 +31,7 @@ module.exports.update = async function(req,res){
 
                console.log("this is file",req.file,"this is body",req.body,"useravatarpath",User.avaterpath);
 
-                user.name=req.body.name;
+               user.username=req.body.username;
                 user.email=req.body.email;
                 if(req.file){
                     //this is saving the path of the uploaded file into the avatar field in the user
